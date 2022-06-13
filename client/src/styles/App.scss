@@ -1,0 +1,85 @@
+:root {
+    --slightly-shaded-opacity: 0.8;
+    --opaque-black: rgba(0, 0, 0, var(--standard-opacity));
+
+    /* blue-themed colour composition */
+    --blue-comp-1: #13293d;
+    --blue-comp-2: #006494;
+    --blue-comp-3: #247ba0;
+    --blue-comp-4: #1b98e0;
+    --blue-comp-5: #e8f1f2;
+
+    --standard-horizontal-padding: 5%;
+    --standard-vertical-padding: 3%;
+
+    --bright-red: hwb(0 0% 0%);
+
+    --large-font-size: 5rem;
+    --medium-large-font-size: 3rem;
+
+    --app-header-colour: black;
+    --app-footer-colour: black;
+}
+
+.nice * {
+    color: white !important;
+}
+
+* {
+    box-sizing: border-box;
+    transition: 0.2s ease;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: clamp(3px, calc(0.7vw + 0.7em), 120px);
+}
+
+body {
+    background-color: var(--blue-comp-1);
+    color: white;
+
+    padding: 3%;
+}
+
+/* class given to the route currently selected on the navbar */
+.active {
+    background-color: var(--blue-comp-2);
+}
+
+/* fonts */
+
+/* https://fonts.google.com/specimen/Koulen#standard-styles
+font-family: 'Oswald', sans-serif; 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Oswald:wght@700&display=swap");
+
+/* 
+https://fonts.google.com/specimen/Oswald#standard-styles
+font-family: "Koulen", cursive;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+@import url("./_main-header.scss");
+@import url("./_main-footer.scss");
+
+@import url("./pages/_homepage.scss");
+@import url("./pages/_error-page.scss");
+
+@import url("./_animations.scss");
+@import url("./_mobile-responsiveness.scss");
+
+.fill {
+    height: 100vh;
+    background-color: red;
+}
+
+.test {
+    background-color: lightcoral;
+
+    width: 30%;
+    transform: translateX(10vw);
+    opacity: 0;
+    transition: 1s ease;
+}

@@ -1,0 +1,141 @@
+$standard-x-translation: 8vw;
+$standard-y-translation: 8vh;
+$standard-diagonal-x-translation: 7vw;
+$standard-diagonal-y-translation: 7vh;
+
+// on-scroll-to destination's transitions onto screen
+.transition-l,
+.transition-r,
+.transition-t,
+.transition-b,
+.transition-tl,
+.transition-tr,
+.transition-bl,
+.transition-br,
+.transition-no-movement {
+    position: relative;
+    transition: 2s ease;
+
+    // optional
+    opacity: 0;
+}
+
+.no-movement {
+    opacity: 1;
+}
+
+// left
+.transition-l {
+    left: -$standard-x-translation;
+}
+
+// right
+.transition-r {
+    left: $standard-x-translation;
+}
+
+// top
+.transition-t {
+    top: -$standard-y-translation;
+}
+
+// bottom
+.transition-b {
+    top: $standard-y-translation;
+}
+
+// top-left
+.transition-tl {
+    left: -$standard-diagonal-x-translation;
+    top: -$standard-diagonal-y-translation;
+}
+
+// top-right
+.transition-tr {
+    left: $standard-diagonal-x-translation;
+    top: -$standard-diagonal-y-translation;
+}
+
+// bottom-left
+.transition-bl {
+    left: -$standard-diagonal-x-translation;
+    top: $standard-diagonal-y-translation;
+}
+
+// bottom-right
+.transition-br {
+    left: $standard-diagonal-x-translation;
+    top: $standard-diagonal-y-translation;
+}
+
+// start the transition
+// it is paramount this selector be AFTER the transition types like transition-right
+// otherwise the transition will be overridden and the element will keep the offsetted
+// position
+.start-transition {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    opacity: 1;
+}
+
+/*
+
+.nice
+
+*/
+
+.hover-shake {
+    display: inline-block;
+    text-shadow: 0 0 1rem lightskyblue, 0 0 1rem lightskyblue,
+        0 0 1rem lightskyblue;
+}
+
+// hover effects
+.hover-shake:hover {
+    animation: shake 0.8s;
+}
+
+.hover-spin:hover {
+    animation: spin 0.8s;
+}
+
+.hover-shake:hover {
+    color: aqua;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(15%) translateY(15%);
+    }
+
+    25% {
+        transform: translateX(-15%) translateY(15%);
+    }
+
+    50% {
+        transform: translateX(15%) translateY(-15%);
+    }
+
+    75% {
+        transform: translateX(-15%) translateY(-15%);
+    }
+
+    100% {
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        text-shadow: 0 0 15rem greenyellow, 0 0 15rem greenyellow,
+            0 0 15rem greenyellow;
+    }
+    to {
+        transform: rotate(360deg);
+        text-shadow: 0 0 1rem greenyellow, 0 0 1rem greenyellow,
+            0 0 1rem greenyellow;
+    }
+}
